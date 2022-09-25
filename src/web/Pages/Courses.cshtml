@@ -1,0 +1,63 @@
+@page
+
+@model CourseModel
+@{
+    ViewData["Title"] = "Course page";
+}
+ <h1 class="display-4">Course</h1>
+ 
+<table class="table">
+  <thead>
+     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses[0].Title)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Courses[0].SubTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses[0].Descripton)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses[0].Level)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Courses[0].Rating)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.Courses[0].Author)
+        </th>
+     </tr>
+  </thead>
+  <tbody>
+    @foreach(var item in Model.Courses){
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.SubTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripton)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>  
+               <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+               <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+        </tr>
+
+    }
+  </tbody>
+</table>
+
+
+<div class="text-center">
+   
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

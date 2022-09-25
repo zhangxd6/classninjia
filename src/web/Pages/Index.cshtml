@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+ViewData["Title"] = "Home page";
+}
+@* @section Scripts {
+var apiurl = @Model.ApiUrl;
+} *@
+<h2> Class Ninjia is twhere you can</h2>
+<div id="carousel_banner" class="carousel slide carousel-dark" data-bs-ride="carousel">
+    <div class="carousel-inner text center">
+        <div class="carousel-item active">
+            <img src="img/undraw_education.svg" class="d-block rounded mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Explore New Skills</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/undraw_invest.svg" class="d-block rounded mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Invest Your Future</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/undraw_learning.svg" class="d-block rounded mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Share Your Passions</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2> With A Great Selection of Courses</h2>
+
+<div class="d-flex  flex-wrap justify-content-evenly">
+    @foreach(var item in Model.Courses){
+    
+        <div class="card">
+            <img src="img/undraw_professor.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a href="courses?id=@item.Id">
+                   <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                 </a>
+                 <p class="card-text">@Html.DisplayFor(modelItem => item.SubTitle)</p>
+            </div>
+
+        </div>
+   
+
+    }
+</div>
