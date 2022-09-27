@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  Database: Host=db;Database=my_db;Username=postgres;Password=example
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: course
+  namespace: classninjia

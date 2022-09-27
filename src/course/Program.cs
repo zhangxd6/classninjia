@@ -2,14 +2,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Services.AddControllers();
-builder.Services.AddDbContext<CourseContext>(options =>
-   options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
+builder.Services.AddDbContext<CourseContext>(options =>{
+   options.UseNpgsql(builder.Configuration.GetConnectionString("Database"));});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 using (var scope = app.Services.CreateScope())
 {
    var services = scope.ServiceProvider;

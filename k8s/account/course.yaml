@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: account
+  name: account
+  namespace: classninjia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: account
+    spec:
+      containers:
+      - image: src-account
+        name: src-account
+        ports:
+          - containerPort: 80
+        resources: {}
+status: {}

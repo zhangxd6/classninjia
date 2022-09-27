@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: course
+  name: course
+  namespace: classninjia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: course
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: course
+    spec:
+      containers:
+      - image: src-course
+        name: src-course
+        ports:
+          - containerPort: 80
+        resources: {}
+status: {}

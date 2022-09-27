@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: db
+  name: db
+  namespace: classninjia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: postgres
+        name: postgres
+        ports:
+          - containerPort: 5432
+        envFrom:
+        - configMapRef:
+            name: db
+status: {}

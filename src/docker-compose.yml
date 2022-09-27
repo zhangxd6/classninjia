@@ -20,6 +20,7 @@ services:
  account:
    environment:
    - ASPNETCORE_ENVIRONMENT=Development
+   - ConnectionStrings:Database=Host=db;Database=my_db;Username=postgres;Password=example
    build:
      context: ./account
      dockerfile: ./Dockerfile
@@ -32,6 +33,7 @@ services:
  course:
    environment:
    - ASPNETCORE_ENVIRONMENT=Development
+   - ConnectionStrings:Database=Host=db;Database=my_db;Username=postgres;Password=example
    build:
      context: ./course
      dockerfile: ./Dockerfile
